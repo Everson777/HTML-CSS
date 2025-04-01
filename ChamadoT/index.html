@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abertura de Chamado Técnico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="overlay"></div> <!-- Camada de sobreposição para o fundo -->
+  
+  <div class="container">
+    <header>
+      <h1>Abertura de Chamado Técnico</h1>
+    </header>
+
+    <form class="form-chamado" method="POST" action="enviar_email.php" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="email">Seu Email</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição do Problema</label>
+        <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva o problema de forma detalhada..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="urgencia">Urgência</label>
+        <select id="urgencia" name="urgencia" required>
+          <option value="baixa">Baixa</option>
+          <option value="media">Média</option>
+          <option value="alta">Alta</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="arquivo">Anexar Arquivo (opcional)</label>
+        <input type="file" id="arquivo" name="arquivo" accept="image/*,application/pdf">
+      </div>
+
+      <!-- Novo campo para enviar relatório -->
+      <div class="form-group">
+        <label for="relatorio">Relatório (opcional)</label>
+        <input type="file" id="relatorio" name="relatorio" accept=".pdf,.docx,.txt">
+      </div>
+
+      <button type="submit" class="btn-submit">Abrir Chamado</button>
+    </form>
+  </div>
+
+</body>
+</html>
